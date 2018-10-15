@@ -1,8 +1,6 @@
 # DevTo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dev_to`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This dev_to gem will scrape dev.to and update the user with 10 article names. The user will select the number of the article they want to read, and then they will be given the first paragraph of that specific post and the option to "finish reading online" incase they want to read the article in it's entirely and see any supporting graphics or code on the actual webiste.
 
 ## Installation
 
