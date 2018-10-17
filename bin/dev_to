@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require "./lib/dev_to"
+
 DevTo::CLI.new.call

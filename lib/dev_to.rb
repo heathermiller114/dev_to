@@ -1,5 +1,3 @@
-require "dev_to/version"
+require_relative "./dev_to/version"
+require_relative "./dev_to/cli"
 
-module DevTo
-  # Your code goes here...
-end
