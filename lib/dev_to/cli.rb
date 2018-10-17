@@ -31,16 +31,16 @@ class DevTo::CLI
   end
   
   def menu
-    puts "Enter the number of the hashtag you would like to see blogposts for"
-    puts "OR, enter 'exit' if you are done!"
-    
-    input = gets.strip.to_i
-    if input.to_i != 0 && input.to_i.between?(1, 20)
-      puts "Here are the most recent blog posts for that hashtag:"
-    elsif input.to_i > 20
-      puts "Try again!"
-
-    end
+    input = nil
+    while input != "exit"
+      puts "Enter the number of the hashtag you would like to see blogposts for OR, enter 'exit' if you are done!"
+      input = gets.strip.to_i
+        if input.to_i != 0 && input.to_i.between?(1, 20)
+          puts "Here are the most recent blog posts for that hashtag:"
+        elsif input.to_i > 20
+          puts "Try again!"
+        end
+      end
   end
   
   def goodbye
