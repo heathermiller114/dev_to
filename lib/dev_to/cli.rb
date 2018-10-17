@@ -34,15 +34,12 @@ class DevTo::CLI
     puts "Enter the number of the hashtag you would like to see blogposts for"
     puts "OR, enter 'exit' if you are done!"
     
-    input = nil
-    while input != "exit"
-      input = gets.strip.to_i
-      case input
-        when (1..20)
-          puts "Here are the most recent blog posts for that hashtag:"
-        when (21..100)
-          puts "Try again!"
-      end
+    input = gets.strip.to_i
+    if input.to_i != 0 && input.to_i.between?(1, 20)
+      puts "Here are the most recent blog posts for that hashtag:"
+    elsif input.to_i > 20
+      puts "Try again!"
+
     end
   end
   
