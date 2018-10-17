@@ -39,8 +39,10 @@ class DevTo::CLI
           puts "Here are the most recent blog posts for that hashtag:"
         elsif input.to_i > 20
           puts "Try again!"
-        elsif input == "list"
+        elsif input.downcase == "list"
           list_hashtags
+        else 
+          puts "Not sure what you are trying to do. Enter 'list' for the list of hashtags, or 'exit'."
         end
       end
   end
