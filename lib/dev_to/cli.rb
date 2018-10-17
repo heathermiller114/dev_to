@@ -1,11 +1,13 @@
 class DevTo::CLI
   
   def call
-    puts "Here are the top 20 hashtags on DevTo"
     list_hashtags
+    menu
+    goodbye
   end
   
   def list_hashtags
+    puts "Here are the top 20 hashtags on DevTo"
     puts "1. Javascript"
     puts "2. Discuss"
     puts "3. WebDev"
@@ -26,6 +28,26 @@ class DevTo::CLI
     puts "18. Git"
     puts "19. PHP"
     puts "20. Ruby"
+  end
+  
+  def menu
+    puts "Enter the number of the hashtag you would like to see blogposts for"
+    puts "OR, enter 'exit' if you are done!"
+    
+    input = nil
+    while input != "exit"
+      input = gets.strip.to_i
+      case input
+        when (1..20)
+          puts "Here are the most recent blog posts for that hashtag:"
+        when (21..100)
+          puts "Try again!"
+      end
+    end
+  end
+  
+  def goodbye
+    puts "See you later for new blog posts!"
   end
   
 end
