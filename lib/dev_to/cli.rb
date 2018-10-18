@@ -18,6 +18,10 @@ class DevTo::CLI
       puts "#{index}. #{tag.name}"
     end
   end
+    
+  def get_blogposts
+    DevTo::HashtagScraper.scrape_blogs
+  end
   
   def menu
     input = nil
@@ -26,6 +30,7 @@ class DevTo::CLI
       input = gets.strip
         if input.to_i != 0 && input.to_i.between?(1, 100)
           puts "Here are the most recent blog posts for that hashtag:"
+          get_blogposts
         elsif input.to_i > 100
           puts "Try again!"
         elsif input.downcase == "list"
@@ -35,6 +40,7 @@ class DevTo::CLI
         end
       end
   end
+
   
   def goodbye
     puts "See you later for new blog posts!"
