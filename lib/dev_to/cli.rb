@@ -19,8 +19,8 @@ class DevTo::CLI
     end
   end
     
-  def get_blogposts
-    DevTo::HashtagScraper.scrape_blogs
+  def get_blogposts(input)
+    DevTo::HashtagScraper.scrape_blogs(input)
   end
   
   def menu
@@ -30,7 +30,7 @@ class DevTo::CLI
       input = gets.strip
         if input.to_i != 0 && input.to_i.between?(1, 100)
           puts "Here are the most recent blog posts for that hashtag:"
-          get_blogposts
+          get_blogposts(input)
         elsif input.to_i > 100
           puts "Try again!"
         elsif input.downcase == "list"

@@ -17,11 +17,11 @@ class DevTo::HashtagScraper
     end
   end
   
-  def self.scrape_blogs
+  def self.scrape_blogs(input)
     DevTo::Hashtag.all
 
     
-    url = DevTo::Hashtag.all[#user selection].url
+    url = DevTo::Hashtag.all[input.to_i - 1].url
     page = Nokogiri::HTML(open(url))
 
     counter = 0    
