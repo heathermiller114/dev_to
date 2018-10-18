@@ -7,8 +7,11 @@ class DevTo::CLI
   end
   
   def list_hashtags
-
+    puts "Top Hashtags on DevTo:"
     @hashtag = DevTo::Hashtag.tags
+    @hashtag.each.with_index(1) do |tag, index|
+      puts "#{index}. #{tag}"
+    end
   end
   
   def menu
