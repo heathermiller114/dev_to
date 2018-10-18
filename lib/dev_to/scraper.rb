@@ -10,10 +10,14 @@ class DevTo::HashtagScraper
     while counter < 20
       page.css("a.tag-show-link").each do |hashtag| 
         name = page.css("a.tag-show-link").css("h2")[counter].text
-        url = page.css("a.tag-show-link")[counter].attr("href")
+        url = "https://dev.to" + page.css("a.tag-show-link")[counter].attr("href")
+        binding.pry
         DevTo::Hashtag.new(name, url)
         counter += 1
       end
     end
+  end
+  
+  def self.scrape_blogs(hashtag_url)
   end
 end
