@@ -1,16 +1,21 @@
 class DevTo::CLI
   
   def call
+    get_hashtags
     list_hashtags
     menu
     goodbye
   end
   
-  def list_hashtags
+  def get_hashtags
     puts "Top Hashtags on DevTo:"
-    @hashtag = DevTo::Hashtag.tags
-    @hashtag.each.with_index(1) do |tag, index|
-      puts "#{index}. #{tag}"
+    DevTo::HashtagScraper.tags
+  end
+  
+  def list_hashtags
+    hashtag = DevTo::Hashtag.all
+    hashtag.each.with_index(1) do |tag, index|
+      puts "#{index}. #{tag.name}"
     end
   end
   
@@ -19,9 +24,9 @@ class DevTo::CLI
     while input != "exit"
       puts "Enter the number of the hashtag you would like to see blogposts for, or 'list' to see the hashtag list again or 'exit' if you are done!"
       input = gets.strip
-        if input.to_i != 0 && input.to_i.between?(1, 20)
+        if input.to_i != 0 && input.to_i.between?(1, 100)
           puts "Here are the most recent blog posts for that hashtag:"
-        elsif input.to_i > 20
+        elsif input.to_i > 100
           puts "Try again!"
         elsif input.downcase == "list"
           list_hashtags
