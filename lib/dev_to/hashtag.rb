@@ -1,4 +1,8 @@
+require 'pry'
 class DevTo::Hashtag
+  
+  attr_accessor :name, :url
+  @@all_tags = []
   
   def self.tags
     puts "Here are the top 20 hashtags on DevTo"
@@ -22,6 +26,23 @@ class DevTo::Hashtag
     puts "18. Git"
     puts "19. PHP"
     puts "20. Ruby"
+    
+    
+    hashtag_1 = self.new
+    hashtag_1.name = "Javascript"
+    hashtag_1.url = "https://dev.to/t/javascript"
+    @@all_tags << hashtag_1
+
+    hashtag_2 = self.new
+    hashtag_2.name = "Discuss"
+    hashtag_2.url = "https://dev.to/t/discuss"
+    @@all_tags << hashtag_2
+    
+    hashtag_3 = self.new
+    hashtag_3.name = "WebDev"
+    hashtag_3.url = "https://dev.to/t/webdev"
+    @@all_tags << hashtag_3
+
   end
   
   
