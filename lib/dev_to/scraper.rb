@@ -18,19 +18,21 @@ class DevTo::HashtagScraper
   end
   
   def self.scrape_blogs(input)
+    blogposts = []
     DevTo::Hashtag.all
-
     
     url = DevTo::Hashtag.all[input.to_i - 1].url
     page = Nokogiri::HTML(open(url))
 
-    counter = 0    
-    while counter < 10
+    counter = 0   
+    until counter == 10
       page.css("h3").each do |article_title|
         title = page.css("h3")[counter].text.strip
-        binding.pry
+        blogposts << title
         counter += 1
       end
     end
+    binding.pry
+    blogposts
   end
 end

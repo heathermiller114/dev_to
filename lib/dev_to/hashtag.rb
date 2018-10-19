@@ -7,6 +7,7 @@ class DevTo::Hashtag
   def initialize(name, url)
     @name = name
     @url = url
+    @blogposts = []
     @@all_tags << self
   end
   
