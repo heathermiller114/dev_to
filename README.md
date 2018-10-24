@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After gem installation, type './bin/dev_to' into the terminal to run.
 
 ## Development
 
