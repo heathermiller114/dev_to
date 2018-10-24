@@ -48,7 +48,7 @@ class DevTo::CLI
         elsif input.downcase == "exit"
           goodbye
         else 
-          puts "Not sure what you are trying to do. Enter 'list' for the list of hashtags, or 'exit'."
+          puts "Not sure what you are trying to do."
         end
       end
   end
