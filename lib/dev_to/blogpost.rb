@@ -17,6 +17,4 @@ class DevTo::Blogposts
   def self.delete
     @@all_blogposts.clear
   end
-  
-  
 end
