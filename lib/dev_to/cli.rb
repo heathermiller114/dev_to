@@ -13,7 +13,7 @@ class DevTo::CLI
   
   def list_hashtags
     hashtag = DevTo::Hashtag.all
-    hashtag.each.with_index(1) do |tag, index|
+    hashtag[0...20].each.with_index(1) do |tag, index|
       puts "#{index}. #{tag.name}"
     end
   end
@@ -21,12 +21,13 @@ class DevTo::CLI
   def get_blogposts(input)
     DevTo::HashtagScraper.scrape_blogs(input)
     blogposts = DevTo::Blogposts.all
-    blogposts.each.with_index(1) do |post, index|
+    blogposts[0...10].each.with_index(1) do |post, index|
       puts "#{index}. #{post.title}"
       puts ""
       puts "    To read online: #{post.url}"
       puts ""
     end
+    DevTo::Blogposts.delete
   end
     
   def goodbye
