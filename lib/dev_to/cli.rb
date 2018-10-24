@@ -21,6 +21,10 @@ class DevTo::CLI
     
   def get_blogposts(input)
     DevTo::HashtagScraper.scrape_blogs(input)
+    blogposts = DevTo::Blogposts.all
+    blogposts.each.with_index(1) do |post, index|
+      puts "#{index}. #{post.title}"
+    end
   end
   
   def menu

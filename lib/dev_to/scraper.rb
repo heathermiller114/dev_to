@@ -25,14 +25,12 @@ class DevTo::HashtagScraper
     page = Nokogiri::HTML(open(url))
 
     counter = 0   
-    until counter == 10
+    while counter < 5
       page.css("h3").each do |article_title|
         title = page.css("h3")[counter].text.strip
-        blogposts << title
+        DevTo::Blogposts.new(title)
         counter += 1
       end
     end
-    binding.pry
-    blogposts
   end
 end
