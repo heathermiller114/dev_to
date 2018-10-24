@@ -1,6 +1,6 @@
 # DevTo
 
-This dev_to gem will scrape dev.to and update the user with 10 article names. The user will select the number of the article they want to read, and then they will be given the first paragraph of that specific post and the option to "finish reading online" incase they want to read the article in it's entirely and see any supporting graphics or code on the actual webiste.
+This dev_to gem will scrape the blogging website, dev.to, and update the user with the top 20 hashtags of blog topics. The user will select the number of the topic hashtag that they want to see recent blogposts for. The gem will then show most recent 8 articles that have tagged that topic in their post. It will also give the URL of the blogpost, so if the user is interested, they will be able to read the entire post online.
 
 ## Installation
 
