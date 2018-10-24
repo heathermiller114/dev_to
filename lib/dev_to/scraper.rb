@@ -28,7 +28,8 @@ class DevTo::HashtagScraper
     while counter < 5
       page.css("h3").each do |article_title|
         title = page.css("h3")[counter].text.strip
-        DevTo::Blogposts.new(title)
+        url = "https://dev.to" + page.css("a.index-article-link")[counter].attr("href")
+        DevTo::Blogposts.new(title, url)
         counter += 1
       end
     end

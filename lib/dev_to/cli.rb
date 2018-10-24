@@ -4,7 +4,6 @@ class DevTo::CLI
     get_hashtags
     list_hashtags
     menu
-    goodbye
   end
   
   def get_hashtags
@@ -24,7 +23,14 @@ class DevTo::CLI
     blogposts = DevTo::Blogposts.all
     blogposts.each.with_index(1) do |post, index|
       puts "#{index}. #{post.title}"
+      puts ""
+      puts "    To read online: #{post.url}"
+      puts ""
     end
+  end
+    
+  def goodbye
+    puts "See you later for new blog posts!"
   end
   
   def menu
@@ -39,15 +45,13 @@ class DevTo::CLI
           puts "Try again!"
         elsif input.downcase == "list"
           list_hashtags
+        elsif input.downcase == "exit"
+          goodbye
         else 
           puts "Not sure what you are trying to do. Enter 'list' for the list of hashtags, or 'exit'."
         end
       end
   end
 
-  
-  def goodbye
-    puts "See you later for new blog posts!"
-  end
   
 end

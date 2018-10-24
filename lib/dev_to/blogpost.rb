@@ -1,11 +1,12 @@
 require 'pry'
 class DevTo::Blogposts
   
-  attr_accessor :title
+  attr_accessor :title, :url
   @@all_blogposts = []
   
-  def initialize(title)
+  def initialize(title, url)
     @title = title
+    @url = url
     @@all_blogposts << self
   end
   
