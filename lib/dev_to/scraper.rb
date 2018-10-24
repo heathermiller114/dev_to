@@ -24,9 +24,7 @@ class DevTo::HashtagScraper
     
     url = DevTo::Hashtag.all[input.to_i - 1].url
     page = Nokogiri::HTML(open(url))
-    #binding.pry
     counter = 0   
-    #binding.pry
       page.css("h3").each do |article_title|
         title = page.css("h3")[counter].text.strip
         url = "https://dev.to" + page.css("a.index-article-link")[counter].attr("href")
