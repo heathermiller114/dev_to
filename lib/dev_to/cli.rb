@@ -7,7 +7,9 @@ class DevTo::CLI
   end
   
   def get_hashtags
-    puts "Top Hashtags on DevTo:"
+    puts ""
+    puts "-----Top Hashtags on DevTo:-----"
+    puts ""
     DevTo::HashtagScraper.tags
   end
   
