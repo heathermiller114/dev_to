@@ -6,8 +6,8 @@ require "dev_to/version"
 Gem::Specification.new do |spec|
   spec.name          = "dev_to"
   spec.version       = DevTo::Version
-  spec.author        = "Heather Miller"
-  spec.email         = "heather.miller114@gmail.com"
+  spec.author        = [Heather Miller]
+  spec.email         = [heather.miller114@gmail.com]
 
   spec.summary       = "DevTo posts via top hashtags"
   spec.homepage      = https://github.com/heathermiller114/dev_to
