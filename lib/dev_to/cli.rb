@@ -24,7 +24,10 @@ class DevTo::CLI
     blogposts[0...10].each.with_index(1) do |post, index|
       puts "#{index}. #{post.title}"
       puts ""
-      puts "    To read online: #{post.url}"
+      puts "      Related Hashtags:"
+      puts "        #{post.related_tags}"
+      puts ""
+      puts "      To read online: #{post.url}"
       puts ""
     end
     DevTo::Blogposts.delete
