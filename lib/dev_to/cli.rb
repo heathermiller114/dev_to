@@ -36,7 +36,9 @@ class DevTo::CLI
   end
     
   def goodbye
+    puts ""
     puts "See you later for new blog posts!"
+    puts ""
   end
   
   def menu
@@ -46,16 +48,22 @@ class DevTo::CLI
       print "Enter Selection Here: "
       input = gets.strip
         if input.to_i != 0 && input.to_i.between?(1, 20)
-          puts "Here are the most recent blog posts for that hashtag:"
+          puts ""
+          puts "------Here are the most recent blog posts for that hashtag:------"
+          puts ""
           get_blogposts(input)
         elsif input.to_i > 20
+          puts ""
           puts "Try again!"
+          puts ""
         elsif input.downcase == "list"
           list_hashtags
         elsif input.downcase == "exit"
           goodbye
         else 
+          puts ""
           puts "Not sure what you are trying to do."
+          puts ""
         end
       end
   end
