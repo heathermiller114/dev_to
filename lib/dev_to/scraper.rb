@@ -1,8 +1,4 @@
 
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-
 class DevTo::HashtagScraper
   
   def self.tags
@@ -25,6 +21,7 @@ class DevTo::HashtagScraper
     page.css("a.index-article-link").each do |article|
       title = article.children[1].children.text.strip
       url = "https://dev.to" + article.attr("href")
+      #binding.pry
       related_tags = page.css("div.tags")[counter].text.strip
       DevTo::Hashtag.all[input.to_i - 1].blogposts << DevTo::Blogposts.new(title, url, related_tags)
       counter += 1
