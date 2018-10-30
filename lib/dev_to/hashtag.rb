@@ -1,12 +1,13 @@
-require 'pry'
+
 class DevTo::Hashtag
   
-  attr_accessor :name, :url
+  attr_accessor :name, :url, :blogposts
   @@all_tags = []
   
   def initialize(name, url)
     @name = name
     @url = url
+    @blogposts = []
     @@all_tags << self
   end
   

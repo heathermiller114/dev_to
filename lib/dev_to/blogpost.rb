@@ -1,4 +1,4 @@
-require 'pry'
+
 class DevTo::Blogposts
   
   attr_accessor :title, :url, :related_tags

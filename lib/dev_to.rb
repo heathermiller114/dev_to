@@ -1,3 +1,7 @@
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
+
 require_relative "./dev_to/version"
 require_relative "./dev_to/cli"
 require_relative "./dev_to/scraper"

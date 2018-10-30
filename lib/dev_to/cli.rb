@@ -21,8 +21,8 @@ class DevTo::CLI
   end
     
   def get_blogposts(input)
-    DevTo::HashtagScraper.scrape_blogs(input)
-    blogposts = DevTo::Blogposts.all
+    DevTo::HashtagScraper.scrape_blogs(input) if DevTo::Hashtag.all[input.to_i - 1].blogposts == []
+    blogposts = DevTo::Hashtag.all[input.to_i - 1].blogposts
     blogposts[0...8].each.with_index(1) do |post, index|
       puts "#{index}. #{post.title}"
       puts ""
@@ -32,7 +32,6 @@ class DevTo::CLI
       puts "      To read online: #{post.url}"
       puts ""
     end
-    DevTo::Blogposts.delete
   end
     
   def goodbye
@@ -42,8 +41,8 @@ class DevTo::CLI
   end
   
   def menu
-    input = nil
-    while input != "exit"
+    input = ""
+    while input.downcase != "exit"
       puts "Enter the number of the hashtag you would like to see blogposts for, or 'list' to see the hashtag list again or 'exit' if you are done!"
       print "Enter Selection Here: "
       input = gets.strip
