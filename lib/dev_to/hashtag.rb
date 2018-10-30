@@ -14,6 +14,4 @@ class DevTo::Hashtag
   def self.all
     @@all_tags
   end
-  
-  
 end
