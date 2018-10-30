@@ -14,8 +14,8 @@ class DevTo::CLI
   end
   
   def list_hashtags
-    hashtag = DevTo::Hashtag.all
-    hashtag[0...20].each.with_index(1) do |tag, index|
+    hashtags = DevTo::Hashtag.all
+    hashtags[0...20].each.with_index(1) do |tag, index|
       puts "#{index}. #{tag.name}"
     end
   end
